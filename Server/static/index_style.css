@@ -1,0 +1,56 @@
+.mainform-sec {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.mainform-sec h1 {
+    font-size: 82px;
+    color: var(--text-color-h1);
+    text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
+}
+
+.mainform {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 66%;
+}
+
+.mainform div {
+    flex: 50%;
+}
+
+.mainform-sideside {
+    display: flex;
+    flex-direction: row;
+}
+
+.mainform-ss-col {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.mainform-ss-col label {
+    text-align: center;
+    font-size: 40px;
+    color: var(--text-color-form-label);
+    flex: 50%;
+}
+
+.mainform-ss-col input {
+    margin-top: 7px;
+    width: 84%;
+    margin-left: 8%;
+    padding: 5px 10px;
+}
+
+.mainform-ss-col select {
+    margin-top: 7px;
+    width: 84%;
+    margin-left: 8%;
+    padding: 5px 10px;
+}

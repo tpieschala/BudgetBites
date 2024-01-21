@@ -1,5 +1,6 @@
 from flask import Flask, render_template, current_app, request, redirect
 from pymongo.mongo_client import MongoClient
+import sys
 
 from dotenv import load_dotenv
 import os
@@ -30,9 +31,9 @@ def results():
         recipeCollection = db["recipes"]
         budget = request.form["budget"]
 
-        recipeResults = recipeCollection.find({"$expr": {"$lte": [budget, {"$sum": "ingredients.price"}]}}).limit(10).toList()
+        recipeResults = list(recipeCollection.find({"$expr": {"$lte": [{"$sum": "$ingredients.price"}, int(budget)] }}).limit(5))
 
-        return render_template("results.html", recipeResults, budget)
+        return render_template("results.html", recipeResults=recipeResults, budget=budget)
 
     else:
         return render_template("results.html")

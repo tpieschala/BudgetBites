@@ -17,11 +17,11 @@
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-    width: 66%;
+    width: 80%;
 }
 
 .mainform div {
-    flex: 50%;
+    flex: 33%;
 }
 
 .mainform-sideside {
@@ -30,7 +30,6 @@
 }
 
 .mainform-ss-col {
-    margin-left: -60px;
     display: flex;
     flex-direction: column;
     padding: 5%;
@@ -42,31 +41,28 @@
     text-align: center;
     font-size: 40px;
     color: var(--text-color-form-label);
-    flex: 50%;
+    flex: 33%;
 }
 
-.mainform-ss-col input {
+.mainform-ss-col div input {
     margin-top: 7px;
     width: 84%;
     margin-left: 8%;
     padding: 5px 10px;
 }
 
-.mainform-ss-col select {
+.mainform-ss-col div select {
     margin-top: 7px;
     width: 84%;
     margin-left: 8%;
     padding: 5px 10px;
 }
 
-/* Add styles for the submit button */
 .submitBtnContainer {
-    margin-left: -650px; /* Adjust the left margin as needed */
+    margin-top: 3%;
 }
+
 .submitBtn {
-    position:absolute;
-    margin-top: 250px; /* Adjust the top margin as needed for spacing */
-    margin-bottom: 0;
     padding: 10px 20px; /* Adjust padding as needed */
     font-size: 24px; /* Set the font size */
     cursor: pointer; /* Change cursor on hover */

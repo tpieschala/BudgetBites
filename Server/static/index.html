@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="/static/index_style.css">
     </head>
     <body>
-        <nav>
+        <nav class="shadow">
             <div class="navspacer"></div>
             <div class="logo">
                  <svg><?xml version="1.0" encoding="utf-8"?>
@@ -142,16 +142,18 @@
                     <li><a href='about.html' target="_blank">About</a></li>
                 </ul>
             </div>
+            </nav>
             <div class="navspacer"></div>
         </nav>
         <main>
             <section class="mainform-sec">
                 <h1>Welcome!</h1>
-                <form class="mainform">
+                <form method="post" action="/results" class="mainform">
                     <div class="mainform-sideside">
                         <div class="mainform-ss-col">
                             <label for="city">Choose your city</label>
                             <div><select name="city">
+                                <option value="default">Choose your city...</option>
                                 <option value="anaheim">Anaheim</option>
                                 <option value="bakersfield">Bakersfield</option>
                                 <option value="chulavista">Chula Vista</option>
@@ -177,6 +179,9 @@
                         <div class="mainform-ss-col">
                             <label for="budget-box">Enter your budget in USD</label>
                             <div><input name="budget-box" type="number"></div>
+                        </div>
+                        <div class="submitBtnContainer">
+                            <input type="submit" value="Budgetize!" class="submitBtn">
                         </div>
                     </div>
                     <div>

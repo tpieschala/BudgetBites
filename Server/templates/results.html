@@ -138,7 +138,7 @@
             </div>
             <div class="nav-links">
                 <ul>
-                    <li><a href='#'>Home</a></li>
+                    <li><a href='/'>Home</a></li>
                     <li><a href='about.html' target="_blank">About</a></li>
                 </ul>
             </div>
@@ -146,30 +146,22 @@
         </nav>
         <main>
             <section class="results">
-                <ul>
-                    {% for result in recipeResults %}
-                    <li>
-                        <h3>
-                            {{ result.name }}
-                        </h3>
-                        <ul>
-                            {% for ingredient in result[ingredients] %}
-                            <li>
-                                {{ ingredient.name }} | ${{ ingredient.price }}
-                            </li>
-                            {% else %}
-        
-                            <li>NO RECIPES FOUND FOR ${{ budget }}</li>
-
-                            {{% endfor %}}
-                        </ul>
-                    </li>
-                    {% else %}
-
-                    <li class="error">Something went wrong! Nothing was queried from the server</li>
-
-                    {% endfor %}
-                </ul>
+                {% for result in recipeResults %}
+                <h3>
+                    {{ result.recipe }}
+                </h3>
+                <li>
+                    <ul>
+                        {% for ingredient in result.ingredients %}
+                        <li>
+                            {{ ingredient.name }} | ${{ ingredient.price }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% else %}
+                <h1>NO RECIPES FOUND FOR ${{ budget }}</h1>
+                {% endfor %}
             </section>
         </main>
 

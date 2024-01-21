@@ -155,14 +155,18 @@
                         <ul>
                             {% for ingredient in result[ingredients] %}
                             <li>
-                                {{ ingredient }}
+                                {{ ingredient.name }} | ${{ ingredient.price }}
                             </li>
+                            {% else %}
+        
+                            <li>NO RECIPES FOUND FOR ${{ budget }}</li>
+
                             {{% endfor %}}
                         </ul>
                     </li>
                     {% else %}
 
-                    <li>NO RECIPES FOUND FOR ${{ budget }}</li>
+                    <li class="error">Something went wrong! Nothing was queried from the server</li>
 
                     {% endfor %}
                 </ul>

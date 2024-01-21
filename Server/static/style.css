@@ -4,6 +4,7 @@
     --text-color-nav-minor: #a8e8a2;
     --text-color-h1: white;
     --text-color-form-label: darkgreen;
+    margin: 0 0;
 }
 
 main{
@@ -18,10 +19,11 @@ nav{
     z-index: 1;
     display: flex;
     align-items: center;
+    background-color: rgb(191, 234, 205);
 }
 
 nav div.navspacer {
-    width: 10%;
+    width: 1%;
 }
 
 .logo{
@@ -33,6 +35,7 @@ nav div.navspacer {
 }
 
 .nav-links{
+    margin-right: 5%;
     flex: 1;
     text-align: right;
 }
@@ -47,4 +50,20 @@ nav div.navspacer {
     text-decoration: none;
     color: var(--text-color-nav);
     font-size: 25px;
+}
+
+.shadow{
+        box-shadow: 0 1pxx 4px rgba(0,0,0,0.3), 0 0 40 px rgba(0,0,0,0.1) inset;
+}
+.shadow:before,
+.shadow:after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    top: -5%;
+    bottom: 0;
+    left: -100%;
+    right: -100%;
+    border-radius: 5000px / 5000px; 
 }

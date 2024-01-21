@@ -1,22 +1,27 @@
 *{
     font-family: sans-serif;
+    --text-color-nav: #1eba84;
+    --text-color-nav-minor: #a8e8a2;
+    --text-color-h1: white;
+    --text-color-form-label: darkgreen;
 }
 
 main{
     width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(to right, #a8e8a2, #1eba84);
+    height: 100%;
+    background: linear-gradient(to right, var(--text-color-nav-minor), var(--text-color-nav));
 }
 
 nav{
-    width: 80%;
     position: sticky;
     margin: 0px auto;
     z-index: 1;
     display: flex;
     align-items: center;
+}
+
+nav div.navspacer {
+    width: 10%;
 }
 
 .logo{
@@ -40,6 +45,6 @@ nav{
 
 .nav-links ul li a{
     text-decoration: none;
-    color: #1eba84;
+    color: var(--text-color-nav);
     font-size: 25px;
 }

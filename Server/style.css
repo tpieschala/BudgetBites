@@ -50,7 +50,7 @@ nav{
     height: 1000px;
     position: absolute;
     top: 50%;
-    right: 40%;
+    left: 0;
     transform: translateY(-50%);
 }
 #circle{
@@ -62,7 +62,7 @@ nav{
     border-radius: 50%;
     transform: rotate(0deg);
     transition: 1s;
-    z-index: -1;
+     
 }
 
 .feature img{
@@ -72,6 +72,7 @@ nav{
     position: absolute;
     display: flex;
     color: #fff;
+    z-index: -1;
 }
 .feature div{
     margin-left: 30px;
@@ -81,11 +82,11 @@ nav{
 }
 .one{
     top: 450px;
-    right: 50px;
+    right: 10px;
 }
 .two{
-    top: 150px;
-    left: 350px;
+    top: 50px;
+    left: 300px;
     transform: rotate(-90deg);
 }
 .three{
@@ -120,14 +121,15 @@ nav{
 }
 
 .overlay{
-    width: 0px;
-    height: 0px;
-    border-top: 500 px solid #fff;
-    border-right: 500 px solid transparent;
-    border-bottom: 500 px solid #fff;
-    border-left: 500 px solid #fff;
+    width: 0;
+    height: 0;
+    border-top: 500px solid #fff;
+    border-right: 500px solid transparent;
+    border-bottom: 500px solid #fff;
+    border-left: 500px solid #fff;
     position: absolute;
     left: 0;
     top: 0;
     z-index: 1;
+    pointer-events: none;
 }

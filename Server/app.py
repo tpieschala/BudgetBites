@@ -26,8 +26,8 @@ def about_page():
 def results():
     if request.method == "POST":
         dbClient = MongoClient(mongo_uri)
-        db = dbClient["budgetbitez-db"]
-        recipeCollection = db["recipe-collection"]
+        db = dbClient["budgetbitez"]
+        recipeCollection = db["recipes"]
         budget = request.form["budget"]
 
         recipeResults = recipeCollection.find({"$expr": {"$lte": [budget, {"$sum": "ingredients.price"}]}}).limit(10).toList()

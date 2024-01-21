@@ -1,10 +1,10 @@
 <html>
     <head>
-        <title>Website Design Using HTML And CSS</title>
+        <title>BudgetBitez</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class = "main">
+        <div class="main">
             <nav>
                 <div class="logo">
                     <svg><?xml version="1.0" encoding="utf-8"?>
@@ -142,17 +142,79 @@
                     </ul>
                 </div>
             </nav>
-
-            <div class="information">
-                <div id="circle">
-                    <div class="feature"></div>
-                    <div class="feature"></div>
-                    <div class="feature"></div>
-                    <div class="feature"></div>
+            <div class="wrapper">
+                <div class="select-btn">
+                  <span>Select City</span>
+                  <i class="uil uil-angle-down"></i>
+                </div>
+                <div class="content">
+                  <div class="search">
+                    <i class="uil uil-search"></i>
+                    <input spellcheck="false" type="text" placeholder="Search">
+                  </div>
+                  <ul class="options"></ul>
                 </div>
             </div>
-
         </div>
+        <script>
+            const wrapper = document.querySelector(".wrapper"),
+            selectBtn = wrapper.querySelector(".select-btn"),
+            searchInp = wrapper.querySelector("input"),
+            options = wrapper.querySelector(".options");
 
+            let cities = [
+                'Anaheim',
+                'Bakersfield',
+                'Chula Vista',
+                'Fontana',
+                'Fremont',
+                'Fresno',
+                'Irvine',
+                'Long Beach',
+                'Los Angeles',
+                'Modesto',
+                'Oakland',
+                'Oxnard',
+                'Riverside',
+                'Sacramento',
+                'San Ana',
+                'San Bernardino',
+                'San Diego',
+                'San Francisco',
+                'San Jose',
+                'Stockton'
+            ];
+
+            function addCity(selectedCity) {
+                options.innerHTML = "";
+                cities.forEach(city => {
+                    let isSelected = city == selectedCity ? "selected" : "";
+                    let li = `<li onclick="updateName(this)" class="${isSelected}">${city}</li>`;
+                    options.insertAdjacentHTML("beforeend", li);
+                });
+            }
+            addCity();
+
+            function updateName(selectedLi) {
+                searchInp.value = "";
+                addCity(selectedLi.innerText);
+                wrapper.classList.remove("active");
+                selectBtn.firstElementChild.innerText = selectedLi.innerText;
+            }
+
+            searchInp.addEventListener("keyup", () => {
+                let arr = [];
+                let searchWord = searchInp.value.toLowerCase();
+                arr = cities.filter(data => {
+                    return data.toLowerCase().startsWith(searchWord);
+                }).map(data => {
+                    let isSelected = data == selectBtn.firstElementChild.innerText ? "selected" : "";
+                    return `<li onclick="updateName(this)" class="${isSelected}">${data}</li>`;
+                }).join("");
+                options.innerHTML = arr ? arr : `<p style="margin-top: 10px;">City not found</p>`;
+            });
+
+            selectBtn.addEventListener("click", () => wrapper.classList.toggle("active"));
+        </script>
     </body>
 </html>

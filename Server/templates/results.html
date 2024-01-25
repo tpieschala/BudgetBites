@@ -148,16 +148,18 @@
             <section class="results">
                 {% for result in recipeResults %}
                 <section class="result">
-                    <h3>
-                        {{ result.recipe }}
-                    </h3>
-                    <ul>
-                        {% for ingredient in result.ingredients %}
-                        <li>
-                            {{ ingredient.name }} | ${{ ingredient.price }}
-                        </li>
-                        {% endfor %}
-                    </ul>
+                    <div class="header">
+                        <h3>
+                            {{ result.recipe }}
+                        </h3>
+                    </div>
+                        <ul>
+                            {% for ingredient in result.ingredients %}
+                            <li>
+                                {{ ingredient.name }} | ${{ ingredient.price }}
+                            </li>
+                            {% endfor %}
+                        </ul>
                 </section>
                 {% else %}
                 <section class="error"><h1>NO RECIPES FOUND FOR ${{ budget }}</h1></section>

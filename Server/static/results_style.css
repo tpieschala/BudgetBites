@@ -4,14 +4,35 @@
     padding-left: 10%;
     padding-right: 10%;
     width: 80%;
-    justify-content: flex-start;
-    align-content: flex-start;
+    justify-content: center;
+    align-content: center;
     row-gap: 50px;
 }
 
 .result {
     flex: 30%;
+    align-items: center;
+    justify-content: center;
     max-width: 30%;
     margin-right: 1%;
     padding: 1%;
+    font-family: poppins;
+    border-radius: 48px;
+    background: #c1d3c0;
+    box-shadow:  5px 5px 10px #a2b1a1,
+                -5px -5px 10px #e0f5df;
+
+}
+
+.header{
+    font-size: 25px;
+    font-family: poppins;
+    text-align: center;
+}
+
+
+ul li{
+    font-size: 20px;
+    text-align: center;
+
 }

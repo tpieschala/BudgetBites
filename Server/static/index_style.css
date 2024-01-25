@@ -63,15 +63,14 @@
 }
 
 .submitBtn {
+    background: none;
     padding: 10px 20px; /* Adjust padding as needed */
-    font-size: 24px; /* Set the font size */
+    font-size: 25px; /* Set the font size */
     cursor: pointer; /* Change cursor on hover */
-    border: none; /* Remove default button border */
-    border-radius: 5px; /* Add border-radius for rounded corners */
-}
-
-/* Add styles for button hover effect */
-.submitBtn:hover {
-    background-color: var(grey); /* Set hover background color */
-    color: var(grey); /* Set hover text color */
+    border: 1px solid #338033; /* Remove default button border */
+    border-radius: 4px; /* Add border-radius for rounded corners */
+    width: 240px;
+    height: 80px;
+    transition: 0.6s;
+    overflow: hidden;
 }

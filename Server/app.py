@@ -30,9 +30,9 @@ def results():
         db = dbClient["budgetbitez"]
         recipeCollection = db["recipes"]
         budget = request.form["budget"]
-
-        recipeResults = list(recipeCollection.find({"$expr": {"$lte": [{"$sum": "$ingredients.price"}, int(budget)] }}).limit(5))
-
+        # 5 random recipes
+        recipeResults = list(recipeCollection.aggregate([{ "$match": {"$expr": {"$lte": [{"$sum": "$ingredients.price"}, int(budget)] }} }, { "$sample": { "size": 5 } }]))
+        
         return render_template("results.html", recipeResults=recipeResults, budget=budget)
 
     else:

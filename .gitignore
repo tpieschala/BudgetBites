@@ -2,3 +2,5 @@
 Server/__pycache__/
 .env
 playground-1.mongodb.js
+output.txt
+formatDB.py
